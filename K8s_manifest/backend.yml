@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: backend-container
-          image: placeholder/notes_app_backend:latest
+          image: heyydhiraj/notes_app_backend:2.1
           ports: 
            - containerPort : 5000
 ---
