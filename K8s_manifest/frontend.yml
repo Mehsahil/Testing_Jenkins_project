@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: frontend-container
-          image: heyydhiraj/notes_app_frontend:2.1
+          image: heyydhiraj/notes_app_frontend:v2.0
           ports:
             - containerPort: 3000
 
