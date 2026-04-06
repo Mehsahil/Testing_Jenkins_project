@@ -1,0 +1,43 @@
+kind: backend_deployment
+apiVersion : apps/v1
+
+metadata:
+  name: frontend-deploymnet
+  namespace: prod-app-ns
+
+spec:
+  replicas: 3
+  selector:
+    matchlabels:
+      app : frontend-app
+  template:
+    metadata :
+      name: frontend-pod
+      namespace: prod-app-ns
+      label:
+        app : frontend-app
+    spec:
+      containers:
+        - name: frontend-container
+          image: ${DOCKER_USERNAME}/notes_app_frontend:v1.0.0
+          ports:
+            - containerPort: 3000
+
+---
+kind: Service
+apiVersion : v1
+
+metadata:
+  name: frontend-svc
+  namespace: prod-app-ns
+
+spec:
+  type: NodePort
+  selector:
+    app: frontend-app
+  ports:
+    - ports: 3000
+      targetPort: 3000
+      protocol: TCP
+      nodePort: 34000
+    

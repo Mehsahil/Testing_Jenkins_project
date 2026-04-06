@@ -1,0 +1,42 @@
+kind: Deployment
+apiVersion: apps/v1
+
+metadata:
+    name: backend_deployment
+    namespace: prod-app-ns
+
+spec:
+  replicas : 3
+  selector:
+    matchlabels: 
+      app : backend-app
+  template:
+    metadata : 
+      name: backend-pod
+      namespace: prod-app-ns
+      label:
+        app: backend-app
+    spec:
+      containers:
+        - name: backend-container
+          image: ${DOCKER_USERNAME}/notes_app_backend:v1.0.0
+          ports: 
+           - containerPort : 5000
+---
+kind: Service
+apiVersion: v1
+
+metadata:
+  name: backend-svc
+  namespace: prod-app-ns
+
+spec:
+  Type: NodePort
+  selector:
+    app : backend-app
+  ports:
+    - port : 5000
+      targetPort : 5000
+      protocol : TCP
+      nodePort: 33000
+          
