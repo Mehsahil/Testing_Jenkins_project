@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Uplinks To-Do | Dhiraj Meshram</title>
+    
+    <style>
+      @keyframes float {
+        0%, 100% { transform: translateY(0) translateX(0); }
+        25% { transform: translateY(-30px) translateX(10px); }
+        50% { transform: translateY(-10px) translateX(30px); }
+        75% { transform: translateY(-40px) translateX(15px); }
+      }
+      .bubble {
+        animation: float infinite ease-in-out;
+        opacity: 0.6;
+      }
+      .bubble-1 { animation-duration: 18s; animation-delay: 1s; }
+      .bubble-2 { animation-duration: 25s; animation-delay: 5s; }
+      .bubble-3 { animation-duration: 20s; animation-delay: 0s; }
+    </style>
+  </head>
+  <body class="m-0 p-0 overflow-x-hidden font-sans">
+    
+    <div class="fixed -z-10 inset-0 bg-gradient-to-br from-[#EBF4FF] via-[#F3E8FF] to-[#FFF1F2]">
+      <div class="bubble bubble-1 absolute h-96 w-96 rounded-full bg-blue-100 blur-3xl -top-10 -left-10"></div>
+      <div class="bubble bubble-2 absolute h-[400px] w-[400px] rounded-full bg-pink-100 blur-3xl top-1/2 left-1/2 transform -translate-x-1/2"></div>
+      <div class="bubble bubble-3 absolute h-80 w-80 rounded-full bg-purple-100 blur-3xl -bottom-10 -right-10"></div>
+    </div>
+
+    <div id="root"></div>
+  </body>
+</html>
