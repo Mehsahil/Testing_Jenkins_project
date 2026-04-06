@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: frontend-container
-          image: ${DOCKER_USERNAME}/notes_app_frontend:${params.BACKEND_DOCKER_TAG}
+          image: heyydhiraj/notes_app_frontend:${params.BACKEND_DOCKER_TAG}
           ports:
             - containerPort: 3000
 
