@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: backend-container
-          image: ${DOCKER_USERNAME}/notes_app_backend:v1.0.0
+          image: ${DOCKER_USERNAME}/notes_app_backend:${params.BACKEND_DOCKER_TAG}
           ports: 
            - containerPort : 5000
 ---
