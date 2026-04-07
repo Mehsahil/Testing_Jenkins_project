@@ -2,7 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 
 metadata:
-    name: backend_deployment
+    name: backend-deployment
     namespace: test-app-jenkins-ns
 
 spec:
@@ -38,5 +38,5 @@ spec:
     - port : 5000
       targetPort : 5000
       protocol : TCP
-      nodePort: 33000
+      nodePort: 30500
           
