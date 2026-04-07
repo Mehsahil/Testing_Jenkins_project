@@ -39,5 +39,5 @@ spec:
     - ports: 3000
       targetPort: 3000
       protocol: TCP
-      nodePort: 34000
+      nodePort: 30600
     
