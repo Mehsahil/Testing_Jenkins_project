@@ -6,22 +6,21 @@ metadata:
     namespace: test-app-jenkins-ns
 
 spec:
-  replicas : 3
+  replicas: 3
   selector:
-    matchlabels: 
-      app : backend-app
+    matchLabels:      # Fixed: capital L
+      app: backend-app
   template:
-    metadata : 
+    metadata:
       name: backend-pod
-      namespace: test-app-jenkins-ns
-      label:
+      labels:           # Fixed: changed from 'label' to 'labels'
         app: backend-app
     spec:
       containers:
         - name: backend-container
           image: heyydhiraj/notes_app_backend:v2.0
-          ports: 
-           - containerPort : 5000
+          ports:
+            - containerPort: 5000
 ---
 kind: Service
 apiVersion: v1
@@ -31,12 +30,11 @@ metadata:
   namespace: test-app-jenkins-ns
 
 spec:
-  Type: NodePort
+  type: NodePort      # Fixed: lowercase 't'
   selector:
-    app : backend-app
+    app: backend-app
   ports:
-    - port : 5000
-      targetPort : 5000
-      protocol : TCP
+    - port: 5000
+      targetPort: 5000
+      protocol: TCP
       nodePort: 30500
-          
