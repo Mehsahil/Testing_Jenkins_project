@@ -28,7 +28,7 @@ apiVersion: v1
 
 metadata:
   name: backend-svc
-  namespace: prod-app-ns
+  namespace: test-app-jenkins-ns
 
 spec:
   Type: NodePort
