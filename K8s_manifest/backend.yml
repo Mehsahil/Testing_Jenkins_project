@@ -13,7 +13,7 @@ spec:
   template:
     metadata : 
       name: backend-pod
-      namespace: prod-app-ns
+      namespace: test-app-jenkins-ns
       label:
         app: backend-app
     spec:
